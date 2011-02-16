@@ -5,6 +5,14 @@ SOFT-DELIMITERS = "<,>" ;
 
 # Tags
 
+LIST N = n ;
+LIST A = adj ;
+LIST V = vblex ;
+LIST Adv = adv ;
+LIST Pr = pr ;
+LIST Pron = prn ;
+LIST Det = det ;
+LIST CC = cnjcoo ;
 LIST CS = cnjsub ;
 
 LIST Interr = itg ; 
@@ -46,7 +54,7 @@ SET OBL    = NGDAIP - Nom ;
 
 # Boundary sets 
 
-SET S-BOUNDARY = CS | Interr | (";") | BOS | EOS ;
+SET S-BOUNDARY = CS | Interr | (";") ;
 
 SECTION
 
