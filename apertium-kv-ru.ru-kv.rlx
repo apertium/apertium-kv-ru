@@ -1,0 +1,56 @@
+DELIMITERS = "<.>" "<!>" "<?>" ; 
+SOFT-DELIMITERS = "<,>" ;
+
+###############################################################################
+
+# Tags
+
+LIST CS = cnjsub ;
+
+LIST Interr = itg ; 
+
+LIST Nom = nom ;
+LIST Gen = gen ;
+LIST Dat = dat ;
+LIST Acc = acc ;
+LIST Ins = ins ;
+LIST Prp = prp ;
+
+# Tag groups 
+
+LIST NGDAIP = nom gen dat acc ins prp ;
+LIST GENDER = m f nt mfn ;
+LIST NUMBER = sg pl sp ;
+
+# Lexicalised lists 
+
+LIST NOMPREP = "за" "в" ;
+LIST GENPREP = "без" "против" "напротив" "кроме" "вместо" "у" "близ" 
+               "вдоль" "возле" "мимо" "около" "среди" "посреди" "вокруг" 
+               "из" "с" "от" "после" "из-за" "ис-под" "вне" "внутри" 
+               "для" "ради" "до" "накануне" ;
+LIST DATPREP = "по" "к" "вопреки" "наперекор" "благодаря" "согласно" ;
+LIST ACCPREP = "в" "с" "на" "про" "за" "о" "под" "сквозь" "по" "через" ;
+LIST PRPPREP = "в" "на" ;
+LIST INSPREP = "с" "над" "под" "между" "перед" "за" ;
+
+# Sets 
+
+SET NOTNOM = Gen | Dat | Acc | Ins | Prp ;
+SET NOTGEN = Nom | Dat | Acc | Ins | Prp ;
+SET NOTDAT = Nom | Gen | Acc | Ins | Prp ;
+SET NOTACC = Nom | Gen | Dat | Ins | Prp ;
+SET NOTINS = Nom | Gen | Dat | Acc | Prp ;
+SET NOTPRP = Nom | Gen | Dat | Acc | Ins ;
+SET OBL    = NGDAIP - Nom ;
+
+# Boundary sets 
+
+SET S-BOUNDARY = CS | Interr | (";") | BOS | EOS ;
+
+SECTION
+
+## Что она за женщина?
+## Маша недавно вышла в рабочие.	
+## Дима пошёл в политики.
+
