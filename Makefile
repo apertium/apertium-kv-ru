@@ -1,2 +1,2 @@
 all:
-	lt-comp lr apertium-kv-ru.ru.dix ru.bin
+	lt-comp lr apertium-kv-ru.ru.dix ru-kv.automorf.bin
