@@ -49,6 +49,8 @@ LIST ACCPREP = "в" "с" "на" "про" "за" "о" "под" "сквозь" "п
 LIST PRPPREP = "в" "на" ;
 LIST INSPREP = "с" "над" "под" "между" "перед" "за" ;
 
+LIST ACCINSPREP =  "с" "под" "за" ;
+
 LIST ODIN = "один" "1" ;
 LIST DVA = "два" "2" ;
 LIST TRI = "три" "3" ;
@@ -65,6 +67,9 @@ SET NOTDAT = Nom | Gen | Acc | Ins | Prp ;
 SET NOTACC = Nom | Gen | Dat | Ins | Prp ;
 SET NOTINS = Nom | Gen | Dat | Acc | Prp ;
 SET NOTPRP = Nom | Gen | Dat | Acc | Ins ;
+
+SET NOTACCINS = Nom | Gen | Dat | Prp ; 
+
 SET OBL    = NGDAIP - Nom ;
 
 # Boundary sets 
@@ -77,3 +82,4 @@ SECTION
 ## Маша недавно вышла в рабочие.	
 ## Дима пошёл в политики.
 
+REMOVE NOTACCINS IF (-1 ACCINSPREP) ;
