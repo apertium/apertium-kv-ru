@@ -107,8 +107,6 @@ SECTION
 ## Маша недавно вышла в рабочие.	
 ## Дима пошёл в политики.
 
-# Практика показывает, что для её решения уже недостаточно существующих физических теорий . 
-# Большинство населения достаточно хорошо владеют английским языком . 
 # Большинство населения говорит на финском языке . 
 
 SELECT Det IF (0 PosIndecl) (0 Pers) (1C N OR A);
@@ -119,4 +117,9 @@ SELECT $$NGDAIP IF (0C A) (*1C $$NGDAIP BARRIER NPNHA) ;
 
 SELECT Gen IF (*-1 GENPREP BARRIER NOTGEN OR V OR Pr) ;
 	## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
+
+REMOVE A + Fem IF (0  $$NGDAIP) (*1 NounMscNeu + $$NGDAIP BARRIER NPNHA LINK NOT 0 Fem);
+REMOVE A + Msc IF (0  $$NGDAIP) (*1 NounFemNeu + $$NGDAIP BARRIER NPNHA LINK NOT 0 Msc);
+REMOVE A + Neu IF (0  $$NGDAIP) (*1 NounMscFem + $$NGDAIP BARRIER NPNHA LINK NOT 0 Neu);
+	## Большинство населения достаточно хорошо владеют английским языком .
 
