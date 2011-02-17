@@ -4521,6 +4521,26 @@
       <e><p>          <l>л</l><r>ть<s n="vblex"/><s n="imperf"/><s n="past"/></r></p><par n="BASE__ска/зал"/></e>
     </pardef>
 
+    <pardef n="спро/сить__vblex_perf">
+      <e><p>          <l>сить</l><r>сить<s n="vblex"/><s n="perf"/><s n="inf"/></r></p></e>
+
+      <e><p>          <l>сивш</l><r>ать<s n="vblex"/><s n="imperf"/><s n="pp"/><s n="actv"/></r></p><par n="BASE__английск/ий"/></e>
+      <e><p>          <l>шенный</l><r>ать<s n="vblex"/><s n="imperf"/><s n="pp"/><s n="pasv"/></r></p></e>
+      <e><p>          <l>сив</l><r>ать<s n="vblex"/><s n="imperf"/><s n="pp"/><s n="adv"/></r></p></e>
+
+      <e><p>          <l>шу</l><r>сить<s n="vblex"/><s n="perf"/><s n="fut"/><s n="p1"/><s n="sg"/></r></p></e>
+      <e><p>          <l>сим</l><r>сить<s n="vblex"/><s n="perf"/><s n="fut"/><s n="p1"/><s n="pl"/></r></p></e>
+      <e><p>          <l>сишь</l><r>сить<s n="vblex"/><s n="perf"/><s n="fut"/><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p>          <l>сите</l><r>сить<s n="vblex"/><s n="perf"/><s n="fut"/><s n="p2"/><s n="pl"/></r></p></e>
+      <e><p>          <l>сит</l><r>сить<s n="vblex"/><s n="perf"/><s n="fut"/><s n="p3"/><s n="sg"/></r></p></e>
+      <e><p>          <l>сят</l><r>сить<s n="vblex"/><s n="perf"/><s n="fut"/><s n="p3"/><s n="pl"/></r></p></e>
+
+      <e><p>          <l>си</l><r>сить<s n="vblex"/><s n="perf"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p>          <l>сите</l><r>сить<s n="vblex"/><s n="perf"/><s n="imp"/><s n="p2"/><s n="pl"/></r></p></e>
+
+      <e><p>          <l>сил</l><r>сить<s n="vblex"/><s n="perf"/><s n="past"/></r></p><par n="BASE__ска/зал"/></e>
+    </pardef>
+
 
     <!-- SECTION: Interjections -->
 
@@ -6824,6 +6844,8 @@
     <e lm="достать"><i>доста</i><par n="ста/ть__vblex_perf"/></e>
     <e lm="встать"><i>вста</i><par n="ста/ть__vblex_perf"/></e>
 
+    <e lm="спросить"><i>спро</i><par n="спро/сить__vblex_perf"/></e>
+    <e lm="пригласить"><i>пригла</i><par n="спро/сить__vblex_perf"/></e>
 
     <e lm="видеть"><i>ви</i><par n="ви/деть__vblex_imperf"/></e>
     <e lm="идти"><i></i><par n="/идти__vblex_imperf"/></e>
