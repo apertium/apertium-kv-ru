@@ -52,11 +52,15 @@ LIST INSPREP = "с" "над" "под" "между" "перед" "за" ;
 
 LIST ACCINSPREP =  "с" "под" "за" ;
 
+LIST PosIndecl = ("её" det pos) ("его" det pos) ("их" det pos) ;
+
 LIST ODIN = "один" "1" ;
 LIST DVA = "два" "2" ;
 LIST TRI = "три" "3" ;
 
 # Sets 
+
+SET Pers = (p1) | (p2) | (p3) ;
 
 SET NounMscFem = (n m) OR (n f) OR (n mfn) ;
 SET NounMscNeu = (n m) OR (n nt) OR (n mfn) ;
@@ -107,8 +111,12 @@ SECTION
 # Большинство населения достаточно хорошо владеют английским языком . 
 # Большинство населения говорит на финском языке . 
 
+SELECT Det IF (0 PosIndecl) (0 Pers) (1C N OR A);
+	## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
+
 SELECT $$NGDAIP IF (0C A) (*1C $$NGDAIP BARRIER NPNHA) ; 
 	## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
 
 SELECT Gen IF (*-1 GENPREP BARRIER NOTGEN OR V OR Pr) ;
 	## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
+
