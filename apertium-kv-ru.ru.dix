@@ -522,6 +522,10 @@
       <e>       <p><l>их</l><r>й<s n="det"/><s n="pos"/><s n="mfn"/><s n="pl"/><s n="prp"/></r></p></e>
     </pardef>
 
+    <pardef n="его__det">
+      <e>       <p><l></l><r><s n="det"/><s n="pos"/><s n="adv"/></r></p></e>
+    </pardef>
+
     <pardef n="друг/ой__det">
       <e>       <p><l>ой</l><r>ой<s n="det"/><s n="ind"/><s n="m"/><s n="sg"/><s n="nom"/></r></p></e>
       <e>       <p><l>ого</l><r>ой<s n="det"/><s n="ind"/><s n="m"/><s n="sg"/><s n="gen"/></r></p></e>
@@ -4408,6 +4412,29 @@
 
     </pardef>
 
+    <pardef n="ви/деть__vblex_imperf">
+      <e><p>          <l>деть</l><r>деть<s n="vblex"/><s n="imperf"/><s n="inf"/></r></p></e>
+
+      <e><p>          <l>дящ</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pprs"/><s n="actv"/></r></p><par n="BASE__английск/ий"/></e>
+      <e><p>          <l>димый</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pprs"/><s n="pasv"/></r></p></e>
+      <e><p>          <l>дя</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pprs"/><s n="adv"/></r></p></e>
+
+      <e><p>          <l>девший</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pp"/><s n="actv"/></r></p><par n="BASE__английск/ий"/></e>
+      <e><p>          <l>денный</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pp"/><s n="pasv"/></r></p></e>
+
+      <e><p>          <l>жу</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pres"/><s n="p1"/><s n="sg"/></r></p></e>
+      <e><p>          <l>дим</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pres"/><s n="p1"/><s n="pl"/></r></p></e>
+      <e><p>          <l>дишь</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pres"/><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p>          <l>дите</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pres"/><s n="p2"/><s n="pl"/></r></p></e>
+      <e><p>          <l>дит</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pres"/><s n="p3"/><s n="sg"/></r></p></e>
+      <e><p>          <l>дят</l><r>деть<s n="vblex"/><s n="imperf"/><s n="pres"/><s n="p3"/><s n="pl"/></r></p></e>
+
+      <e><p>          <l>дь</l><r>ать<s n="vblex"/><s n="imperf"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p>          <l>дьте</l><r>ать<s n="vblex"/><s n="imperf"/><s n="imp"/><s n="p2"/><s n="pl"/></r></p></e>
+
+      <e><p>          <l>дел</l><r>деть<s n="vblex"/><s n="imperf"/><s n="past"/></r></p><par n="BASE__ска/зал"/></e>
+    </pardef>
+
 
     <!-- SECTION: Interjections -->
 
@@ -4568,6 +4595,8 @@
     <e lm="мой"><i>мо</i><par n="мо/й__det"/></e>
     <e lm="твой"><i>тво</i><par n="мо/й__det"/></e>
     <e lm="свой"><i>сво</i><par n="мо/й__det"/></e>
+
+    <e lm="его"><i>его</i><par n="его__det"/></e>
 
     <e lm="другой"><i>друг</i><par n="друг/ой__det"/></e>
     <e lm="любой"><i>люб</i><par n="люб/ой__det"/></e>
@@ -6656,6 +6685,8 @@
     <e lm="сообщать"><i>сообщ</i><par n="спас/ать__vblex_imperf"/></e>
     <e lm="спасать"><i>спас</i><par n="спас/ать__vblex_imperf"/></e>
     <e lm="убеждать"><i>убежд</i><par n="спас/ать__vblex_imperf"/></e>
+
+    <e lm="видеть"><i>ви</i><par n="ви/деть__vblex_imperf"/></e>
 
 
     <!-- SECTION: Interjections -->
