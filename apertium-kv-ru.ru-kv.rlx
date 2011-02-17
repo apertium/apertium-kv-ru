@@ -9,6 +9,7 @@ LIST N = n ;
 LIST A = adj ;
 LIST V = vblex ;
 LIST Adv = adv ;
+LIST Num = num ;
 LIST Pr = pr ;
 LIST Pron = prn ;
 LIST Det = det ;
@@ -16,6 +17,11 @@ LIST CC = cnjcoo ;
 LIST CS = cnjsub ;
 
 LIST Interr = itg ; 
+
+LIST Masc = m ;
+LIST Fem = f ;
+LIST Neut = nt ;
+LIST MFN = mfn ;
 
 LIST Nom = nom ;
 LIST Gen = gen ;
@@ -27,8 +33,9 @@ LIST Prp = prp ;
 # Tag groups 
 
 LIST NGDAIP = nom gen dat acc ins prp ;
-LIST GENDER = m f nt mfn ;
+LIST GENDER = m f nt mf mfn ;
 LIST NUMBER = sg pl sp ;
+LIST ANIMAC = aa nn an ;
 
 # Lexicalised lists 
 
@@ -42,7 +49,15 @@ LIST ACCPREP = "в" "с" "на" "про" "за" "о" "под" "сквозь" "п
 LIST PRPPREP = "в" "на" ;
 LIST INSPREP = "с" "над" "под" "между" "перед" "за" ;
 
+LIST ODIN = "один" "1" ;
+LIST DVA = "два" "2" ;
+LIST TRI = "три" "3" ;
+
 # Sets 
+
+SET NOTMASC = Fem | Neut ;
+SET NOTFEM = Masc | Neut ;
+SET NOTNEUT = Masc | Fem | (mf) ;
 
 SET NOTNOM = Gen | Dat | Acc | Ins | Prp ;
 SET NOTGEN = Nom | Dat | Acc | Ins | Prp ;
