@@ -81,9 +81,10 @@ SET OBL    = NGDAIP - Nom ;
 
 SET WORD = N | V | A | Pr | Pron | Det | Adv | CC | CS | Interj | Num | ("\?") ;
 
-SET PRE-N =  A | Det | (n gen) | Num | (pron gen) | CC ; # Det???
+SET PRE-N =  A | Det | (n gen) | Num | (prn gen) | CC ; # Det???
 
 LIST COMMA = (",") ;
+
 SET MARK =  COMMA | ("\\") | ("\;") ; #"
 
 SET WORDMARK = WORD | MARK ;
@@ -93,7 +94,6 @@ SET NPNHA = WORDMARK - PRE-N - Adv ;
 SET NOT-ADV = WORDMARK - Adv ;
 
 SET NP-MEMBER = PRE-N | N | Pron ;
-
 
 SET S-BOUNDARY = CS | Interr | (";") ;
 
@@ -107,5 +107,8 @@ SECTION
 # Большинство населения достаточно хорошо владеют английским языком . 
 # Большинство населения говорит на финском языке . 
 
-SELECT $$NGDAIP IF (0C A) (*1C $$NGDAIP BARRIER NPNHA); 
+SELECT $$NGDAIP IF (0C A) (*1C $$NGDAIP BARRIER NPNHA) ; 
+	## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
+
+SELECT Gen IF (*-1 GENPREP BARRIER NOTGEN OR V OR Pr) ;
 	## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
