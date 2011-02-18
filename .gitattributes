@@ -3,3 +3,4 @@
 /apertium-kv-ru.ru-kv.rlx -text
 /apertium-kv-ru.ru.acx -text
 /apertium-kv-ru.ru.dix -text
+dev/sentences.txt -text svneol=unset#application/octet-stream
