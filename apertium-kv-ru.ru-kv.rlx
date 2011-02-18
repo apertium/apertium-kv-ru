@@ -123,3 +123,7 @@ REMOVE A + Msc IF (0  $$NGDAIP) (*1 NounFemNeu + $$NGDAIP BARRIER NPNHA LINK NOT
 REMOVE A + Neu IF (0  $$NGDAIP) (*1 NounMscFem + $$NGDAIP BARRIER NPNHA LINK NOT 0 Neu);
 	## Большинство населения достаточно хорошо владеют английским языком .
 
+REMOVE Det + Fem IF (0  $$NGDAIP) (*1 NounMscNeu + $$NGDAIP BARRIER NPNHA LINK NOT 0 Fem);
+REMOVE Det + Msc IF (0  $$NGDAIP) (*1 NounFemNeu + $$NGDAIP BARRIER NPNHA LINK NOT 0 Msc);
+REMOVE Det + Neu IF (0  $$NGDAIP) (*1 NounMscFem + $$NGDAIP BARRIER NPNHA LINK NOT 0 Neu);
+	## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
