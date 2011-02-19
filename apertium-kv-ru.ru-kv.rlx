@@ -3,6 +3,9 @@ SOFT-DELIMITERS = "<,>" ;
 
 ###############################################################################
 
+LIST BOS = (>>>) ; 
+LIST EOS = (<<<) ;
+
 # Tags
 
 LIST N = n ;
@@ -30,6 +33,10 @@ LIST Dat = dat ;
 LIST Acc = acc ;
 LIST Ins = ins ;
 LIST Prp = prp ;
+
+LIST Past = past ;
+LIST Pres = pres ;
+LIST Fut = fut ;
 
 # Tag groups 
 
@@ -127,3 +134,11 @@ REMOVE Det + Fem IF (0  $$NGDAIP) (*1 NounMscNeu + $$NGDAIP BARRIER NPNHA LINK N
 REMOVE Det + Msc IF (0  $$NGDAIP) (*1 NounFemNeu + $$NGDAIP BARRIER NPNHA LINK NOT 0 Msc);
 REMOVE Det + Neu IF (0  $$NGDAIP) (*1 NounMscFem + $$NGDAIP BARRIER NPNHA LINK NOT 0 Neu);
 	## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
+
+REMOVE CS IF (0 ("что")) (NOT -1 COMMA) (NOT -1 BOS) ;
+	## Вот что говорят об этом исторические архивы. 
+
+REMOVE Det IF (NOT 1 N OR PRE-N) ;
+	## Вот что говорят об этом исторические архивы. 
+
+REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (NOT *1 V-FIN + $$NUMBER) ;
