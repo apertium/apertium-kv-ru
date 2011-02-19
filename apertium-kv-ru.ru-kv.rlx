@@ -8,7 +8,7 @@ LIST EOS = (<<<) ;
 
 # Tags
 
-LIST N = n ;
+LIST N = n np num ;
 LIST A = adj (vblex pp) ;
 LIST V = vblex ;
 LIST Adv = adv ;
@@ -165,9 +165,10 @@ SELECT Gen IF (-1C N OR A) (0C N) ;
 REMOVE Det + $$NGDAIP IF (0 Det) (0 Pron) (NOT 1 (PRE-N OR N) + $$NGDAIP) ; 
     ## Вот что говорят об этом исторические архивы. 
     
-REMOVE Pron IF (0 Dem + $$NUMBER + $$NGDAIP)(1 N OR A + $$NUMBER + $$NGDAIP);
+REMOVE Pron IF (0 Dem + $$NUMBER + $$NGDAIP)(1 N + $$NUMBER + $$NGDAIP);
 
-# not sure about syntax...
-   
+REMOVE Pron IF (0 Dem + $$NUMBER + $$NGDAIP) 
+               (1C PRE-N + $$NUMBER + $$NGDAIP LINK *1C N + $$NUMBER + $$NGDAIP BARRIER NPNHA)  ;
+     
     
 
