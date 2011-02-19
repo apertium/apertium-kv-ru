@@ -181,6 +181,9 @@ REMOVE Pron IF (0 Dem + $$NUMBER + $$NGDAIP)
 #   PP disambiguation                                                         #
 # =========================================================================== #
 
+SELECT Acc IF (*-1 ACCPREP BARRIER NOTACC OR V OR Pr) ;
+    ## С 1977 года по 1990 год — ведущий программы « Этот фантастический мир ».
+
 SELECT Gen IF (*-1 GENPREP BARRIER NOTGEN OR V OR Pr) ;
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
 
