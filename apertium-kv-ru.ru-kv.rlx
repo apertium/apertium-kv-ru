@@ -204,7 +204,9 @@ REMOVE CS IF (0 ("что")) (NOT -1 COMMA) (NOT -1 BOS) ;
     ## Вот что говорят об этом исторические архивы. 
 
 REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*1C V-FIN) (NOT *1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
+REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN) (NOT *-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
     ## Вот что говорят об этом исторические архивы.
+    ## В 177 году германские племена вновь начали наступление.
 
 SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) 
                                    (-1* NP-HEAD) (NOT -1* NP-HEAD + Nom);
