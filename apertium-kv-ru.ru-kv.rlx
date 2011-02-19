@@ -169,6 +169,7 @@ SELECT N + $$NGDAIP IF (0 Neu) (-1C A + Neu + $$NGDAIP) ;
 
 REMOVE N + Sg IF (0 Sg) (0 Pl) (-1C A + Pl) (0 N + $$NGDAIP) (-1 A + $$NGDAIP) ;
 REMOVE N + Pl IF (0 Pl) (0 Sg) (-1C A + Sg) (0 N + $$NGDAIP) (-1 A + $$NGDAIP) ;
+    ## Местами считается, что Космический Змей живёт под землей и в конце концов уничтожит мир.
 
 REMOVE Det + $$NGDAIP IF (0 Det) (0 Pron) (NOT 1 (PRE-N OR N) + $$NGDAIP) ; 
     ## Вот что говорят об этом исторические архивы. 
