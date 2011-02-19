@@ -1,14 +1,29 @@
+# =========================================================================== #
+#    Table of contents                                                        #
+# =========================================================================== #
+#    # Delimiters
+#    # Lists 
+#    ## Tag groups 
+#    ## Lexicalised lists
+#    # Sets
+#    ## Boundary sets 
+#    # Disambiguation
+#    ## NP-internal disambiguation
+#    ## PP disambiguation
+#    ## Global disambiguation
+# =========================================================================== #
+
 DELIMITERS = "<.>" "<!>" "<?>" ; 
 SOFT-DELIMITERS = "<,>" ;
 
-###############################################################################
+# =========================================================================== #
 
 LIST BOS = (>>>) ; 
 LIST EOS = (<<<) ;
 
 # Tags
 
-LIST N = n np num ;
+LIST N = n np ;
 LIST A = adj (vblex pp) ;
 LIST V = vblex ;
 LIST Adv = adv ;
@@ -117,6 +132,12 @@ SET NP-HEAD = N | Pron ;
 SET S-BOUNDARY = CS | Interr | (";") ;
 
 SECTION
+# =========================================================================== #
+#   NP-internal disambiguation                                                #
+# =========================================================================== #
+
+SELECT Gen IF (-1C N OR A) (0C N) ;
+    ## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
 
 SELECT Det IF (0 PosIndecl) (0 Pers) ((1C N) OR (1C PRE-N LINK *1C N BARRIER NPNHA));
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
@@ -125,12 +146,6 @@ SELECT Det IF (0 PosIndecl) (0 Pers) ((1C N) OR (1C PRE-N LINK *1C N BARRIER NPN
 
 SELECT $$NGDAIP IF (0C A) (*1C $$NGDAIP BARRIER NPNHA) ; 
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
-
-SELECT Gen IF (*-1 GENPREP BARRIER NOTGEN OR V OR Pr) ;
-    ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
-
-SELECT Prp IF (*-1 PRPPREP BARRIER NOTPRP OR V OR Pr) ;
-    ## Экономическая теория не стоит на месте и её развитием в исторической перспективе занимается история экономических учений.
 
 REMOVE A + Fem IF (0  $$NGDAIP) (*1 NounMscNeu + $$NGDAIP BARRIER NPNHA LINK NOT 0 Fem);
 REMOVE A + Msc IF (0  $$NGDAIP) (*1 NounFemNeu + $$NGDAIP BARRIER NPNHA LINK NOT 0 Msc);
@@ -143,6 +158,31 @@ REMOVE Det + Msc IF (0  $$NGDAIP) (*1 NounFemNeu + $$NGDAIP BARRIER NPNHA LINK N
 REMOVE Det + Neu IF (0  $$NGDAIP) (*1 NounMscFem + $$NGDAIP BARRIER NPNHA LINK NOT 0 Neu);
     ## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
 
+SELECT N + $$NGDAIP IF (0 Msc)(-1C A + Msc + $$NGDAIP) ;
+SELECT N + $$NGDAIP IF (0 Fem)(-1C A + Fem + $$NGDAIP) ;
+SELECT N + $$NGDAIP IF (0 Neu)(-1C A + Neu + $$NGDAIP) ;
+    ## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
+
+REMOVE Det + $$NGDAIP IF (0 Det) (0 Pron) (NOT 1 (PRE-N OR N) + $$NGDAIP) ; 
+    ## Вот что говорят об этом исторические архивы. 
+    
+REMOVE Pron IF (0 Dem + $$NUMBER + $$NGDAIP) 
+               (1C PRE-N + $$NUMBER + $$NGDAIP LINK *1C N + $$NUMBER + $$NGDAIP BARRIER NPNHA)  ;
+
+# =========================================================================== #
+#   PP disambiguation                                                         #
+# =========================================================================== #
+
+SELECT Gen IF (*-1 GENPREP BARRIER NOTGEN OR V OR Pr) ;
+    ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
+
+SELECT Prp IF (*-1 PRPPREP BARRIER NOTPRP OR V OR Pr) ;
+    ## Экономическая теория не стоит на месте и её развитием в исторической перспективе занимается история экономических учений.
+
+# =========================================================================== #
+#   Global disambiguation                                                     #
+# =========================================================================== #
+
 REMOVE CS IF (0 ("что")) (NOT -1 COMMA) (NOT -1 BOS) ;
     ## Вот что говорят об этом исторические архивы. 
 
@@ -153,22 +193,4 @@ SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*-1C V-FIN + $$NUMBER BARRIER
                                    (-1* NP-HEAD) (NOT -1* NP-HEAD + Nom);
     ## Вот что говорят об этом исторические архивы.
     ## Говорит дело.
-
-SELECT N + $$NGDAIP IF (0 Msc)(-1C A + Msc + $$NGDAIP) ;
-SELECT N + $$NGDAIP IF (0 Fem)(-1C A + Fem + $$NGDAIP) ;
-SELECT N + $$NGDAIP IF (0 Neu)(-1C A + Neu + $$NGDAIP) ;
-    ## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
-
-SELECT Gen IF (-1C N OR A) (0C N) ;
-    ## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
-
-REMOVE Det + $$NGDAIP IF (0 Det) (0 Pron) (NOT 1 (PRE-N OR N) + $$NGDAIP) ; 
-    ## Вот что говорят об этом исторические архивы. 
-    
-REMOVE Pron IF (0 Dem + $$NUMBER + $$NGDAIP)(1 N + $$NUMBER + $$NGDAIP);
-
-REMOVE Pron IF (0 Dem + $$NUMBER + $$NGDAIP) 
-               (1C PRE-N + $$NUMBER + $$NGDAIP LINK *1C N + $$NUMBER + $$NGDAIP BARRIER NPNHA)  ;
-     
-    
 
