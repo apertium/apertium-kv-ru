@@ -16,6 +16,7 @@ LIST Num = num ;
 LIST Pr = pr ;
 LIST Pron = prn ;
 LIST Det = det ;
+LIST Dem = dem ;
 LIST CC = cnjcoo ;
 LIST CS = cnjsub ;
 LIST Interj = ij ;
@@ -161,6 +162,12 @@ SELECT N + $$NGDAIP IF (0 Neu)(-1C A + Neu + $$NGDAIP) ;
 SELECT Gen IF (-1C N OR A) (0C N) ;
     ## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
 
-REMOVE Det + $$NGDAIP IF (0 Det) (0 Pron) (NOT 1 (PRE-N OR N) + $$NGDAIP) ;
+REMOVE Det + $$NGDAIP IF (0 Det) (0 Pron) (NOT 1 (PRE-N OR N) + $$NGDAIP) ; 
     ## Вот что говорят об этом исторические архивы. 
+    
+REMOVE Pron IF (0 Dem + $$NUMBER + $$NGDAIP)(1 N OR A + $$NUMBER + $$NGDAIP);
+
+# not sure about syntax...
+   
+    
 
