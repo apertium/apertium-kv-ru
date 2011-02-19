@@ -11799,7 +11799,7 @@
     <e lm="а"><i>а</i><par n="а__cnjcoo"/></e>
     <e lm="и"><i>и</i><par n="а__cnjcoo"/></e>
     <e lm="или"><i>или</i><par n="а__cnjcoo"/></e>
-    <e lm="же"><i>же</i><par n="а__cnjcoo"/></e>
+    <!--<e lm="же"><i>же</i><par n="а__cnjcoo"/></e>-->
     <e lm="но"><i>но</i><par n="а__cnjcoo"/></e>
 
     <e lm="ни"><i>ни</i><par n="а__cnjcoo"/></e>
