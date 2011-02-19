@@ -138,7 +138,8 @@ REMOVE Det + Neu IF (0  $$NGDAIP) (*1 NounMscFem + $$NGDAIP BARRIER NPNHA LINK N
 REMOVE CS IF (0 ("что")) (NOT -1 COMMA) (NOT -1 BOS) ;
 	## Вот что говорят об этом исторические архивы. 
 
-REMOVE Det IF (NOT 1 N OR PRE-N) ;
+REMOVE Det IF (0 Det) (0 Pron) (NOT 1 N OR PRE-N) ;
 	## Вот что говорят об этом исторические архивы. 
 
 REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (NOT *1 V-FIN + $$NUMBER) ;
+	## Вот что говорят об этом исторические архивы. 
