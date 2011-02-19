@@ -203,6 +203,9 @@ SELECT Prp IF (*-1 PRPPREP BARRIER NOTPRP OR V OR Pr) ;
 REMOVE CS IF (0 ("что")) (NOT -1 COMMA) (NOT -1 BOS) ;
     ## Вот что говорят об этом исторические архивы. 
 
+SELECT CS IF (-1 COMMA) ;
+    ## 
+
 REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*1C V-FIN) (NOT *1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
 REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN) (NOT *-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
     ## Вот что говорят об этом исторические архивы.
