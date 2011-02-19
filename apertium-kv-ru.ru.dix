@@ -69,6 +69,7 @@
 
     <sdef n="top"        c="Toponym"/>
 
+    <sdef n="cm"         c="Comma"/>
     <sdef n="sent"       c="Sentence marker"/>
     <sdef n="lpar"       c="Left parenthesis"/>
     <sdef n="rpar"       c="Right parenthesis"/>
@@ -88,6 +89,10 @@
       <e><re>[0-9]+([.,][0-9]+)?</re><p><l><b/>мм</l><r><b/>мм<s n="num"/></r></p></e>
       <e><re>[0-9]+([.,][0-9]+)?</re><p><l><b/>см</l><r><b/>см<s n="num"/></r></p></e>
       <e><re>[0-9]+([.,][0-9]+)?</re><p><l><b/>кг</l><r><b/>kг<s n="num"/></r></p></e>
+    </pardef>
+
+    <pardef n="coma">
+      <e><re>,</re><p><l></l><r><s n="cm"/></r></p></e>
     </pardef>
 
     <pardef n="separa">
@@ -15798,6 +15803,7 @@
 
   </section>
   <section id="final" type="inconditional">
+    <e><par n="coma"/></e>
     <e><par n="separa"/></e>
     <e><par n="numeros"/></e>
     <e><par n="paresq"/></e>

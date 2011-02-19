@@ -50,6 +50,9 @@ LIST Acc = acc ;
 LIST Ins = ins ;
 LIST Prp = prp ;
 
+LIST Sg = sg ;
+LIST Pl = pl ;
+
 LIST Past = past ;
 LIST Pres = pres ;
 LIST Fut = fut ;
@@ -115,7 +118,7 @@ SET WORD = N | V | A | Pr | Pron | Det | Adv | CC | CS | Interj | Num | ("\?") ;
 
 SET PRE-N =  A | Det | Num | (prn gen) | CC ; # Det???
 
-LIST COMMA = (",") ;
+LIST COMMA = (",") (cm) ;
 
 SET MARK =  COMMA | ("\\") | ("\;") ; #"
 
@@ -136,8 +139,9 @@ SECTION
 #   NP-internal disambiguation                                                #
 # =========================================================================== #
 
-SELECT Gen IF (-1C N OR A) (0C N) ;
+SELECT Gen IF (-1C N) (0C N) ;
     ## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
+    ## Местами считается, что Космический Змей живёт под землей и в конце концов уничтожит мир.
 
 SELECT Det IF (0 PosIndecl) (0 Pers) ((1C N) OR (1C PRE-N LINK *1C N BARRIER NPNHA));
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
@@ -158,9 +162,9 @@ REMOVE Det + Msc IF (0  $$NGDAIP) (*1 NounFemNeu + $$NGDAIP BARRIER NPNHA LINK N
 REMOVE Det + Neu IF (0  $$NGDAIP) (*1 NounMscFem + $$NGDAIP BARRIER NPNHA LINK NOT 0 Neu);
     ## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
 
-SELECT N + $$NGDAIP IF (0 Msc)(-1C A + Msc + $$NGDAIP) ;
-SELECT N + $$NGDAIP IF (0 Fem)(-1C A + Fem + $$NGDAIP) ;
-SELECT N + $$NGDAIP IF (0 Neu)(-1C A + Neu + $$NGDAIP) ;
+SELECT N + $$NGDAIP IF (0 Msc) (-1C A + Msc + $$NGDAIP) ;
+SELECT N + $$NGDAIP IF (0 Fem) (-1C A + Fem + $$NGDAIP) ;
+SELECT N + $$NGDAIP IF (0 Neu) (-1C A + Neu + $$NGDAIP) ;
     ## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
 
 REMOVE Det + $$NGDAIP IF (0 Det) (0 Pron) (NOT 1 (PRE-N OR N) + $$NGDAIP) ; 
