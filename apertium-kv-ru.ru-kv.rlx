@@ -35,6 +35,7 @@ LIST Det = det ;
 LIST Dem = dem ;
 LIST CC = cnjcoo ;
 LIST CS = cnjsub ;
+LIST Pcle = part ;
 LIST Interj = ij ;
 
 LIST Interr = itg ; 
