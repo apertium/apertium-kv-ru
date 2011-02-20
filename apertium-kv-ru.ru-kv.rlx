@@ -86,6 +86,9 @@ LIST ODIN = "один" "1" ;
 LIST DVA = "два" "2" ;
 LIST TRI = "три" "3" ;
 
+LIST V-GEN-OBJ = "добиваться" "достигать" "жаждать" "желать" "заслуживать" ; 
+LIST V-GEN-OR-ACC = "дожидаться" "ждать" "искать" "ожидать" "просить" "требовать" "хотеть" "бояться" ;
+
 # Sets 
 
 SET V-FIN = Pres | Past | Fut ; 
@@ -141,10 +144,11 @@ SECTION
 #   NP-internal disambiguation                                                #
 # =========================================================================== #
 
-SELECT Gen IF (-1C N) ((0C N OR Prop) OR (0C A LINK *1C N BARRIER NOTGEN OR NPNHA)) ;
+SELECT Gen IF (*-1C N BARRIER NPNHA) ((0C N OR Prop) OR (0C A LINK *1C N BARRIER NOTGEN OR NPNHA)) ;
     ## В результате наступления советских войск на севере Финляндия объявила о своём выходе из войны .
     ## Местами считается, что Космический Змей живёт под землей и в конце концов уничтожит мир.
     ## Входит в число исторических городов России.
+    ## Под воздействием этих факторов складывалась идеология и система ценностей римских граждан.
 
 SELECT Det IF (0 PosIndecl) (0 Pers) ((1C N) OR (1C PRE-N LINK *1C N BARRIER NPNHA));
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
@@ -153,6 +157,9 @@ SELECT Det IF (0 PosIndecl) (0 Pers) ((1C N) OR (1C PRE-N LINK *1C N BARRIER NPN
 
 SELECT $$NGDAIP IF (0C A) (*1C $$NGDAIP BARRIER NPNHA) ; 
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
+
+REMOVE $$NGDAIP IF (0C A) (NOT *1 N + $$NGDAIP BARRIER NPNHA);
+    ## Под воздействием этих факторов складывалась идеология и система ценностей римских граждан.
 
 REMOVE A + Fem IF (0  $$NGDAIP) (*1 NounMscNeu + $$NGDAIP BARRIER NPNHA LINK NOT 0 Fem);
 REMOVE A + Msc IF (0  $$NGDAIP) (*1 NounFemNeu + $$NGDAIP BARRIER NPNHA LINK NOT 0 Msc);
@@ -207,8 +214,8 @@ SELECT Prp IF (*-1 PRPPREP BARRIER NOTPRP OR V OR Pr) ;
 REMOVE CS IF (0 ("что")) (NOT -1 COMMA) (NOT -1 BOS) ;
     ## Вот что говорят об этом исторические архивы. 
 
-SELECT CS IF (-1 COMMA) ;
-    ## 
+REMOVE Gen IF (0C N) (0 Gen) (0 Acc) (NOT *-1C N + NOTGEN BARRIER NPNHA);
+    ## Если мы не будем так смотреть, то, хотя мы и разобьём врага, через 30 лет снова возникнет коммунистическая опасность.
 
 REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*1C V-FIN) (NOT *1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
 REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN) (NOT *-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
