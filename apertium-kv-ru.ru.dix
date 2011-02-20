@@ -13,7 +13,7 @@
     <sdef n="vbhaver"    c="Verb 'to have'"/>
     <sdef n="adj"        c="Adjective"/>
     <sdef n="adv"        c="Adverb"/>
-    <sdef n="preadv"     c="PreAdverb"/>
+    <sdef n="preadv"     c="Pre-adverb"/>
     <sdef n="part"       c="Particle"/>
     <sdef n="abbr"       c="Abbreviation"/>
     <sdef n="ij"         c="Interjection"/>
