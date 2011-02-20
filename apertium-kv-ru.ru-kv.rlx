@@ -68,6 +68,9 @@ LIST ANIMAC = aa nn an ;
 
 # Lexicalised lists 
 
+LIST TV = tv ; 
+LIST IV = iv "приходить" ; 
+
 LIST NOMPREP = "за" "в" ;
 LIST GENPREP = "без" "против" "напротив" "кроме" "вместо" "у" "близ" 
                "вдоль" "возле" "мимо" "около" "среди" "посреди" "вокруг" 
@@ -223,9 +226,12 @@ REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN) (NOT *-1C V-FIN + $$NUMBER BAR
     ## В 177 году германские племена вновь начали наступление.
 
 SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) 
-                                   (-1* NP-HEAD) (NOT -1* NP-HEAD + Nom);
+                                   (-1* NP-HEAD) (NOT -1* NP-HEAD + Nom)  ;
 SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) 
                                    (1* NP-HEAD) (NOT 1* NP-HEAD + Nom);
     ## Вот что говорят об этом исторические архивы.
     ## Говорит дело.
 
+SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) 
+                                   (*-1C IV + V-FIN + $$NUMBER) ;
+    ## Сюда приходили и члены королевской семьи.
