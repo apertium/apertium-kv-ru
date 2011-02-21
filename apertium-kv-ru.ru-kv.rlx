@@ -38,6 +38,7 @@ LIST CS = cnjsub ;
 LIST Pcle = part ;
 LIST Interj = ij ;
 
+LIST Refl = ref ;
 LIST Interr = itg ; 
 
 LIST Msc = m ;
@@ -62,6 +63,7 @@ LIST Fut = fut ;
 # Tag groups 
 
 LIST NGDAIP = nom gen dat acc ins prp ;
+
 LIST GENDER = m f nt mf mfn ;
 LIST NUMBER = sg pl sp ;
 LIST ANIMAC = aa nn an ;
@@ -95,6 +97,7 @@ LIST V-GEN-OR-ACC = "дожидаться" "ждать" "искать" "ожид
 # Sets 
 
 SET V-FIN = Pres | Past | Fut ; 
+SET V-FIN-PAST = Past ; 
 
 SET Pers = (p1) | (p2) | (p3) ;
 
@@ -105,9 +108,9 @@ SET NounFemNeu = (n f) OR (n nt) OR (n mfn) ;
 SET NOM-OR-GEN = Nom | Gen ; 
 SET NOM-OR-ACC = Nom | Acc ;
 
-SET NOTMASC = Fem | Neu ;
+SET NOTMSC = Fem | Neu ;
 SET NOTFEM = Msc | Neu ;
-SET NOTNEUT = Msc | Fem | (mf) ;
+SET NOTNEU = Msc | Fem | (mf) ;
 
 SET NOTNOM = Gen | Dat | Acc | Ins | Prp ;
 SET NOTGEN = Nom | Dat | Acc | Ins | Prp ;
@@ -225,6 +228,14 @@ REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN) (NOT *-1C V-FIN + $$NUMBER BAR
     ## Вот что говорят об этом исторические архивы.
     ## В 177 году германские племена вновь начали наступление.
 
+REMOVE Nom + Fem + $$NUMBER (0 NOM-OR-ACC) (*1C V-FIN-PAST) (*1C V-FIN-PAST + NOTFEM + $$NUMBER BARRIER S-BOUNDARY) ;
+REMOVE Nom + Fem + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN-PAST) (*-1C V-FIN-PAST + NOTFEM + $$NUMBER BARRIER S-BOUNDARY) ;
+REMOVE Nom + Neu + $$NUMBER (0 NOM-OR-ACC) (*1C V-FIN-PAST) (*1C V-FIN-PAST + NOTNEU  + $$NUMBER BARRIER S-BOUNDARY) ;
+REMOVE Nom + Neu + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN-PAST) (*-1C V-FIN-PAST + NOTNEU + $$NUMBER BARRIER S-BOUNDARY) ;
+REMOVE Nom + Msc + $$NUMBER (0 NOM-OR-ACC) (*1C V-FIN-PAST) (*1C V-FIN-PAST + NOTMSC  + $$NUMBER BARRIER S-BOUNDARY) ;
+REMOVE Nom + Msc + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN-PAST) (*-1C V-FIN-PAST + NOTMSC + $$NUMBER BARRIER S-BOUNDARY) ;
+    ## Совет депутатов принял решение не сопротивляться царским властям.
+
 SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) 
                                    (-1* NP-HEAD) (NOT -1* NP-HEAD + Nom)  ;
 SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) 
@@ -235,3 +246,5 @@ SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*1C V-FIN + $$NUMBER BARRIER 
 SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) 
                                    (*-1C IV + V-FIN + $$NUMBER) ;
     ## Сюда приходили и члены королевской семьи.
+
+

@@ -27,10 +27,12 @@ for i in [0-9][0-9][0-9][0-9].txt; do
 	fi
 done
 
+FAILEDP=`calc $FCOUNT / $TOTAL \* 100 | sed 's/^\W*//g'`;
+PERCENT=`calc 100.0 - $FAILEDP | sed 's/^\W*//g'`; 
+DATE=`date`;
 echo "--" >> $LOG;
-date >> $LOG
+echo $DATE": "$PERCENT"%" >> $LOG
 echo $PCOUNT"/"$TOTAL" PASSED: "$PASSED >> $LOG;
 echo $FCOUNT"/"$TOTAL" FAILED: "$FAILED >> $LOG; 
-echo "-" >> $LOG;
 
 cat $LOG | tail -4
