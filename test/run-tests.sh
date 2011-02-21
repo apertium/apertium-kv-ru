@@ -33,4 +33,4 @@ echo $PCOUNT"/"$TOTAL" PASSED: "$PASSED >> $LOG;
 echo $FCOUNT"/"$TOTAL" FAILED: "$FAILED >> $LOG; 
 echo "-" >> $LOG;
 
-cat $LOG | tail -5
+cat $LOG | tail -4

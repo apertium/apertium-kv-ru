@@ -69,7 +69,7 @@ LIST ANIMAC = aa nn an ;
 # Lexicalised lists 
 
 LIST TV = tv ; 
-LIST IV = iv "приходить" ; 
+LIST IV = iv "приходить" "существовать"; 
 
 LIST NOMPREP = "за" "в" ;
 LIST GENPREP = "без" "против" "напротив" "кроме" "вместо" "у" "близ" 
