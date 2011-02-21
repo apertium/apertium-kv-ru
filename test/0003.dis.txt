@@ -1,0 +1,17 @@
+"<Все>"
+	"весь" det ind mfn pl nom 
+"<эти>"
+	"этот" det dem mfn pl nom 
+"<регионы>"
+	"регион" n m nn pl nom 
+"<являются>"
+	"являться" vblex imperf pres p3 pl 
+"<частью>"
+	"часть" n f nn sg ins 
+"<Европейского>"
+	"европейский" adj m sg gen 
+"<союза>"
+	"союз" n m nn sg gen 
+"<.>"
+	"." sent 
+
