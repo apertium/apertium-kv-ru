@@ -19,11 +19,11 @@ for i in [0-9][0-9][0-9][0-9].txt; do
 
 	if [[ $DIFFLINES != 0 ]]; then
 		FCOUNT=`expr $FCOUNT + 1`;
-		FAILED=$FAILED" "$i;
+		FAILED=$FAILED" "`echo $i | sed 's/.txt//g'`;
 	else 
 		rm $TEMP"/"$i".diff";
 		PCOUNT=`expr $PCOUNT + 1`;
-		PASSED=$PASSED" "$i;
+		PASSED=$PASSED" "`echo $i | sed 's/.txt//g'`;
 	fi
 done
 

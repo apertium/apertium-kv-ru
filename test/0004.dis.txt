@@ -1,0 +1,17 @@
+"<Они>"
+	"prpers" prn p3 mf pl nom 
+"<составляют>"
+	"составлять" vblex imperf pres p3 pl 
+"<основу>"
+	"основа" n f nn sg acc 
+"<для>"
+	"для" pr 
+"<всех>"
+	"весь" det ind mfn pl gen 
+"<физических>"
+	"физический" adj mfn pl gen 
+"<исследований>"
+	"исследование" n nt nn pl gen 
+"<.>"
+	"." sent 
+

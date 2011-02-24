@@ -1,0 +1,29 @@
+"<За>"
+	"за" pr 
+"<все>"
+	"весь" det ind nt sg acc 
+"<время>"
+	"время" n nt nn sg acc 
+"<заключения>"
+	"заключение" n nt nn sg gen 
+"<он>"
+	"prpers" prn p3 m sg nom 
+"<так>"
+	"так" adv 
+"<и>"
+	"и" cnjcoo 
+"<не>"
+	"не" adv 
+"<увидел>"
+	"увидеть" vblex perf past m sg 
+"<ни>"
+	"ни" cnjcoo 
+"<одного>"
+	"один" num nt sg gen 
+"<человеческого>"
+	"человеческий" adj nt sg gen 
+"<лица>"
+	"лицо" n nt nn sg gen 
+"<.>"
+	"." sent 
+

@@ -10,5 +10,27 @@ test/0002.dis.txt -text
 test/0002.txt -text svneol=unset#application/octet-stream
 test/0003.dis.txt -text
 test/0003.txt -text svneol=unset#application/octet-stream
+test/0004.dis.txt -text
+test/0004.txt -text svneol=unset#application/octet-stream
+test/0005.dis.txt -text
+test/0005.txt -text svneol=unset#application/octet-stream
+test/0006.dis.txt -text
+test/0006.txt -text svneol=unset#application/octet-stream
+test/0007.dis.txt -text
+test/0007.txt -text svneol=unset#application/octet-stream
+test/0008.dis.txt -text
+test/0008.txt -text svneol=unset#application/octet-stream
+test/0009.dis.txt -text
+test/0009.txt -text
+test/0010.dis.txt -text
+test/0010.txt -text svneol=unset#application/octet-stream
+test/0011.dis.txt -text
+test/0011.txt -text svneol=unset#application/octet-stream
+test/0012.dis.txt -text
+test/0012.txt -text svneol=unset#application/octet-stream
+test/0013.dis.txt -text
+test/0013.txt -text svneol=unset#application/octet-stream
+test/0014.dis.txt -text
+test/0014.txt -text svneol=unset#application/octet-stream
 test/history.log -text
 test/run-tests.sh -text

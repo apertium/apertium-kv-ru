@@ -1,0 +1,23 @@
+"<У>"
+	"у" pr 
+"<самого>"
+	"сам" det ref nt sg gen 
+"<названия>"
+	"название" n nt nn sg gen 
+"<«>"
+	"«" lquot 
+"<русский>"
+	"русский" adj m nn sg acc 
+"<язык>"
+	"язык" n m nn sg acc 
+"<»>"
+	"»" rquot 
+"<тоже>"
+	"тоже" adv 
+"<существовали>"
+	"существовать" vblex imperf past mfn pl 
+"<варианты>"
+	"вариант" n m nn pl nom 
+"<.>"
+	"." sent 
+
