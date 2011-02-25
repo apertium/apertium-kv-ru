@@ -11,6 +11,7 @@
 #    ## NP-internal disambiguation
 #    ## PP disambiguation
 #    ## Global disambiguation
+#    ## Lexicalised rules
 # =========================================================================== #
 
 DELIMITERS = "<.>" "<!>" "<?>" ; 
@@ -25,7 +26,7 @@ LIST EOS = (<<<) ;
 
 LIST N = n ;
 LIST Prop = np ;
-LIST A = adj (vblex pp) ;
+LIST A = adj (vblex pp) (vblex pprs);
 LIST V = vblex ;
 LIST Adv = adv ;
 LIST Num = num ;
@@ -71,7 +72,7 @@ LIST ANIMAC = aa nn an ;
 # Lexicalised lists 
 
 LIST TV = tv ; 
-LIST IV = iv "приходить" "существовать"; 
+LIST IV = iv "приходить" "существовать" "идти"; 
 
 LIST NOMPREP = "за" "в" ;
 LIST GENPREP = "без" "против" "напротив" "кроме" "вместо" "у" "близ" 
@@ -92,7 +93,8 @@ LIST DVA = "два" "2" ;
 LIST TRI = "три" "3" ;
 
 LIST V-GEN-OBJ = "добиваться" "достигать" "жаждать" "желать" "заслуживать" ; 
-LIST V-GEN-OR-ACC = "дожидаться" "ждать" "искать" "ожидать" "просить" "требовать" "хотеть" "бояться" ;
+LIST V-GEN-OR-ACC = "дожидаться" "ждать" "искать" "ожидать" "просить" 
+                      "требовать" "хотеть" "бояться" ;
 
 # Sets 
 
@@ -181,6 +183,9 @@ REMOVE Det + Neu IF (0  $$NGDAIP) (*1 NounMscFem + $$NGDAIP BARRIER NPNHA LINK N
 SELECT Det + $$NGDAIP IF (0 $$NGDAIP) (*1 N + $$NGDAIP BARRIER NPNHA);
     ## Этот подход до сих пор является основой экономического образования.
 
+SELECT Det + $$NUMBER IF (0 $$NUMBER) (*1C N + $$NUMBER BARRIER NPNHA);
+    ## За все время заключения он так и не увидел ни одного человеческого лица.
+
 SELECT N + $$NGDAIP IF (0 Msc) (-1C A + Msc + $$NGDAIP) ;
 SELECT N + $$NGDAIP IF (0 Fem) (-1C A + Fem + $$NGDAIP) ;
 SELECT N + $$NGDAIP IF (0 Neu) (-1C A + Neu + $$NGDAIP) ;
@@ -200,12 +205,16 @@ REMOVE Pron IF (0 Dem + $$NUMBER + $$NGDAIP)
                (1C PRE-N + $$NUMBER + $$NGDAIP LINK *1C N + $$NUMBER + $$NGDAIP BARRIER NPNHA)  ;
     ## 
 
+SELECT ODIN + $$GENDER IF (*1C N + $$GENDER BARRIER NPNHA) ;
+    ## За все время заключения он так и не увидел ни одного человеческого лица.
+
 # =========================================================================== #
 #   PP disambiguation                                                         #
 # =========================================================================== #
 
 SELECT Acc IF (*-1 ACCPREP BARRIER NOTACC OR V OR Pr) ;
     ## С 1977 года по 1990 год — ведущий программы « Этот фантастический мир ».
+    ## В 2004 вступила в Европейский союз.
 
 SELECT Gen IF (*-1 GENPREP BARRIER NOTGEN OR V OR Pr) ;
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
@@ -219,6 +228,9 @@ SELECT Prp IF (*-1 PRPPREP BARRIER NOTPRP OR V OR Pr) ;
 
 REMOVE CS IF (0 ("что")) (NOT -1 COMMA) (NOT -1 BOS) ;
     ## Вот что говорят об этом исторические архивы. 
+
+SELECT CS IF (0 ("что")) (-1 COMMA) ;
+    ## Практика показывает, что для её решения уже недостаточно существующих физических теорий.
 
 REMOVE Gen IF (0C N) (0 Gen) (0 Acc) (NOT *-1C N + NOTGEN BARRIER NPNHA);
     ## Если мы не будем так смотреть, то, хотя мы и разобьём врага, через 30 лет снова возникнет коммунистическая опасность.
@@ -247,4 +259,8 @@ SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*-1C V-FIN + $$NUMBER BARRIER
                                    (*-1C IV + V-FIN + $$NUMBER) ;
     ## Сюда приходили и члены королевской семьи.
 
+# =========================================================================== #
+#   Global disambiguation                                                     #
+# =========================================================================== #
 
+SELECT ("язык") (0 ("язык") + OBL) (*-1C ("владеть") OR ("говорить") + V-FIN BARRIER S-BOUNDARY) ;
