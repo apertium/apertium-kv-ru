@@ -42,5 +42,9 @@ test/0018.dis.txt -text
 test/0018.txt -text svneol=unset#application/octet-stream
 test/0019.dis.txt -text
 test/0019.txt -text svneol=unset#application/octet-stream
+test/0020.dis.txt -text
+test/0020.txt -text svneol=unset#application/octet-stream
+test/0021.dis.txt -text
+test/0021.txt -text svneol=unset#application/octet-stream
 test/history.log -text
 test/run-tests.sh -text

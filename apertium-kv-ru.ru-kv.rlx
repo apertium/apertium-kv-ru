@@ -259,8 +259,11 @@ SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*-1C V-FIN + $$NUMBER BARRIER
                                    (*-1C IV + V-FIN + $$NUMBER) ;
     ## Сюда приходили и члены королевской семьи.
 
+REMOVE NP-HEAD + Nom IF (*-1C Pron + Pers + Nom BARRIER S-BOUNDARY) ;
+    ## Там он принялся изучать русский язык.
+
 # =========================================================================== #
 #   Global disambiguation                                                     #
 # =========================================================================== #
 
-SELECT ("язык") (0 ("язык") + OBL) (*-1C ("владеть") OR ("говорить") + V-FIN BARRIER S-BOUNDARY) ;
+SELECT ("язык") (0 ("язык") + OBL) (*-1C ("владеть") OR ("говорить") OR ("изучать") + V BARRIER S-BOUNDARY) ;
