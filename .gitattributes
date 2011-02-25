@@ -32,5 +32,15 @@ test/0013.dis.txt -text
 test/0013.txt -text svneol=unset#application/octet-stream
 test/0014.dis.txt -text
 test/0014.txt -text svneol=unset#application/octet-stream
+test/0015.dis.txt -text
+test/0015.txt -text svneol=unset#application/octet-stream
+test/0016.dis.txt -text
+test/0016.txt -text svneol=unset#application/octet-stream
+test/0017.dis.txt -text
+test/0017.txt -text svneol=unset#application/octet-stream
+test/0018.dis.txt -text
+test/0018.txt -text svneol=unset#application/octet-stream
+test/0019.dis.txt -text
+test/0019.txt -text svneol=unset#application/octet-stream
 test/history.log -text
 test/run-tests.sh -text

@@ -1,0 +1,27 @@
+"<Она>"
+	"prpers" prn p3 f sg nom 
+"<живет>"
+	"жить" vblex imperf pres p3 sg 
+"<в>"
+	"в" pr 
+"<британской>"
+	"британский" adj f sg prp 
+"<семье>"
+	"семья" n f nn sg prp 
+"<и>"
+	"и" cnjcoo 
+"<недавно>"
+	"недавно" adv 
+"<отметила>"
+	"отметить" vblex perf past f sg 
+"<свой>"
+	"свой" det pos m sg acc 
+"<39>"
+	"39" num 
+"<день>"
+	"день" n m nn sg acc 
+"<рождения>"
+	"рождение" n nt nn sg gen 
+"<.>"
+	"." sent 
+
