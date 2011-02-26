@@ -1,0 +1,47 @@
+"<Если>"
+	"если" cnjsub 
+"<мы>"
+	"prpers" prn p1 mf pl nom 
+"<не>"
+	"не" adv 
+"<будем>"
+	"быть" vbser fut p1 pl 
+"<так>"
+	"так" adv 
+"<смотреть>"
+	"смотреть" vblex imperf inf 
+"<,>"
+	"," cm 
+"<то>"
+	"тот" det dem nt sg acc 
+"<,>"
+	"," cm 
+"<хотя>"
+	"хотеть" vbmod imperf pprs adv 
+"<мы>"
+	"prpers" prn p1 mf pl nom 
+"<и>"
+	"и" cnjcoo 
+"<разобьём>"
+	"разбить" vblex perf pres p1 pl 
+"<врага>"
+	"враг" n m aa sg acc 
+"<,>"
+	"," cm 
+"<через>"
+	"через" pr 
+"<30>"
+	"30" num 
+"<лет>"
+	"год" n m nn pl gen 
+"<снова>"
+	"снова" adv 
+"<возникнет>"
+	"возникнуть" vblex perf pres p3 sg 
+"<коммунистическая>"
+	"коммунистический" adj f sg nom 
+"<опасность>"
+	"опасность" n f nn sg nom 
+"<.>"
+	"." sent 
+
