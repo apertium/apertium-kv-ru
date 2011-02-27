@@ -47,6 +47,9 @@ LIST Fem = f ;
 LIST Neu = nt ;
 LIST MFN = mfn ;
 
+LIST Anim = aa ;
+LIST Inanim = nn ;
+
 LIST Nom = nom ;
 LIST Gen = gen ;
 LIST Dat = dat ;
@@ -61,6 +64,11 @@ LIST Past = past ;
 LIST Pres = pres ;
 LIST Fut = fut ;
 
+LIST PrsPrc = ppres ;
+LIST PrtPrc = pp ;
+LIST PrsPrcActv = (ppres actv) ;
+LIST PrtPrcActv = (pp actv) ;
+
 # Tag groups 
 
 LIST NGDAIP = nom gen dat acc ins prp ;
@@ -72,9 +80,8 @@ LIST ANIMAC = aa nn an ;
 # Lexicalised lists 
 
 LIST TV = tv ; 
-LIST IV = iv "приходить" "существовать" "идти"; 
+LIST IV = iv "приходить" "существовать" "идти" ;
 
-LIST NOMPREP = "за" "в" ;
 LIST GENPREP = "без" "против" "напротив" "кроме" "вместо" "у" "близ" 
                "вдоль" "возле" "мимо" "около" "среди" "посреди" "вокруг" 
                "из" "с" "от" "после" "из-за" "ис-под" "вне" "внутри" 
@@ -109,6 +116,8 @@ SET NounFemNeu = (n f) OR (n nt) OR (n mfn) ;
 
 SET NOM-OR-GEN = Nom | Gen ; 
 SET NOM-OR-ACC = Nom | Acc ;
+
+SET ANIM-ACC-OR-GEN = Acc + Anim | Gen - Anim;
 
 SET NOTMSC = Fem | Neu ;
 SET NOTFEM = Msc | Neu ;
@@ -157,6 +166,9 @@ SELECT Gen IF (*-1C N BARRIER NPNHA) ((0C N OR Prop) OR (0C A LINK *1C N BARRIER
     ## Местами считается, что Космический Змей живёт под землей и в конце концов уничтожит мир.
     ## Входит в число исторических городов России.
     ## Под воздействием этих факторов складывалась идеология и система ценностей римских граждан.
+
+REMOVE N + Nom IF (0C A + Nom OR N + Nom) (1C N + Nom);
+    ## Русская кампания 1812 стала началом конца Империи.
 
 SELECT Det IF (0 PosIndecl) (0 Pers) ((1C N) OR (1C PRE-N LINK *1C N BARRIER NPNHA));
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
@@ -212,6 +224,14 @@ SELECT ODIN + $$GENDER IF (*1C N + $$GENDER BARRIER NPNHA) ;
 #   PP disambiguation                                                         #
 # =========================================================================== #
 
+SELECT Nom IF (*-1 ("в") BARRIER NOTNOM OR V OR Pr) (0C Pl) ;
+    ## Маша недавно вышла в рабочие.
+    ## Дима пошёл в политики.
+
+SELECT Nom IF (*-1 ("за") BARRIER NOTNOM OR V OR Pr) (*-1C ("что") + Interr) ;
+    ## Что она за женщина?
+    ## Что Володя за студент?
+
 SELECT Acc IF (*-1 ACCPREP BARRIER NOTACC OR V OR Pr) ;
     ## С 1977 года по 1990 год — ведущий программы « Этот фантастический мир ».
     ## В 2004 вступила в Европейский союз.
@@ -225,6 +245,12 @@ SELECT Prp IF (*-1 PRPPREP BARRIER NOTPRP OR V OR Pr) ;
 # =========================================================================== #
 #   Global disambiguation                                                     #
 # =========================================================================== #
+
+REMOVE Prp IF (NOT *-1 PRPPREP BARRIER V OR NOTPRP OR S-BOUNDARY) ;
+    ## Физическое понимание процессов, происходящих в природе, постоянно развивается.
+
+REMOVE Acc IF (0C ANIM-ACC-OR-GEN) (NOT -1* Anim BARRIER V OR NOTACC OR S-BOUNDARY) ;
+    ## Физическое понимание процессов, происходящих в природе, постоянно развивается.
 
 REMOVE CS IF (0 ("что")) (NOT -1 COMMA) (NOT -1 BOS) ;
     ## Вот что говорят об этом исторические архивы. 
@@ -263,7 +289,12 @@ REMOVE NP-HEAD + Nom IF (*-1C Pron + Pers + Nom BARRIER S-BOUNDARY) ;
     ## Там он принялся изучать русский язык.
 
 # =========================================================================== #
-#   Global disambiguation                                                     #
+#   Lexicalised rules                                                         #
 # =========================================================================== #
 
 SELECT ("язык") (0 ("язык") + OBL) (*-1C ("владеть") OR ("говорить") OR ("изучать") + V BARRIER S-BOUNDARY) ;
+
+SELECT ("год") (0C ("год") OR ("лето")) (-1C Num) ;
+
+SELECT Pr (0 ("включая")) ;
+    ## В городе действует 17 библиотек, включая 8 детских.
