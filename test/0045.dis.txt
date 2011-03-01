@@ -1,0 +1,15 @@
+"<Тем>"
+	"тот" det dem nt sg ins 
+"<временем>"
+	"время" n nt nn sg ins 
+"<английские>"
+	"английский" adj mfn pl nom 
+"<стрелки>"
+	"стрелок" n m aa pl nom 
+"<открыли>"
+	"открыть" vblex perf past mfn pl 
+"<стрельбу>"
+	"стрельба" n f nn sg acc 
+"<.>"
+	"." sent 
+

@@ -80,7 +80,7 @@ LIST ANIMAC = aa nn an ;
 # Lexicalised lists 
 
 LIST TV = tv ; 
-LIST IV = iv "приходить" "существовать" "идти" "появиться";
+LIST IV = iv "приходить" "существовать" "идти" "появиться" "являться";
 
 LIST GENPREP = "без" "против" "напротив" "кроме" "вместо" "у" "близ" 
                "вдоль" "возле" "мимо" "около" "среди" "посреди" "вокруг" 
@@ -236,7 +236,7 @@ REMOVE NOTNOMGEN (0C N + OBL) (-1C Num) ;
 #   PP disambiguation                                                         #
 # =========================================================================== #
 
-SELECT Nom IF (*-1 ("в") BARRIER NOTNOM OR V OR Pr) (0C Pl) (NOT -2 BOS) ;
+#SELECT Nom IF (*-1 ("в") BARRIER NOTNOM OR V OR Pr) (0C Pl) (NOT -2 BOS) ;
     ## Маша недавно вышла в рабочие.
     ## Дима пошёл в политики.
     ## В годы советской власти с 1919 года менялись границы области и районов.
@@ -259,7 +259,6 @@ SELECT Prp IF (*-1 PRPPREP BARRIER NOTPRP OR V OR Pr OR Num) ;
 # =========================================================================== #
 #   Global disambiguation                                                     #
 # =========================================================================== #
-
 
 REMOVE Nom IF (0C N + NOM-OR-ACC) (*-1C PRE-N + NOM-OR-ACC BARRIER NOTNOMACC) (*-1C CC LINK -1C N + NOTNOM) (NOT 1* V-FIN BARRIER S-BOUNDARY) ;
     ## Взгляд может выражать и вызывать эмоции и психическое состояние.
@@ -305,9 +304,13 @@ SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*1C V-FIN + $$NUMBER BARRIER 
 SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) 
                                    (*-1C IV + V-FIN + $$NUMBER) ;
     ## Сюда приходили и члены королевской семьи.
+SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) 
+                                   (*1C IV + V-FIN + $$NUMBER) ;
+    ## Страх таким образом является ситуацией, в которой проявляется человеческая свобода.
 
 REMOVE NP-HEAD + Nom IF (*-1C Pron + Pers + Nom BARRIER S-BOUNDARY) ;
     ## Там он принялся изучать русский язык.
+
 
 # =========================================================================== #
 #   Lexicalised rules                                                         #

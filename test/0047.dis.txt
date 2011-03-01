@@ -1,0 +1,17 @@
+"<Будем>"
+	"быть" vbser fut p1 pl 
+"<искать>"
+	"искать" vblex imperf inf 
+"<решение>"
+	"решение" n nt nn sg acc 
+"<в>"
+	"в" pr 
+"<виде>"
+	"вид" n m nn sg prp 
+"<плоских>"
+	"плоский" adj mfn pl gen 
+"<волн>"
+	"волна" n f nn pl gen 
+"<.>"
+	"." sent 
+
