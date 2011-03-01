@@ -1,0 +1,19 @@
+"<Услугами>"
+	"услуга" n f nn pl ins 
+"<детских>"
+	"детский" adj mfn pl gen 
+"<садов>"
+	"сад" n m nn pl gen 
+"<пользуются>"
+	"пользоваться" vblex imperf pres p3 pl 
+"<135>"
+	"135" num 
+"<тысяч>"
+	"тысяча" num f nn pl gen 
+"<работающих>"
+	"работать" vblex imperf pprs actv mfn pl gen 
+"<матерей>"
+	"мать" n f aa pl gen 
+"<.>"
+	"." sent 
+

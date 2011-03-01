@@ -106,5 +106,11 @@ test/0050.dis.txt -text
 test/0050.txt -text svneol=unset#application/octet-stream
 test/0051.dis.txt -text
 test/0051.txt -text svneol=unset#application/octet-stream
+test/0052.dis.txt -text
+test/0052.txt -text svneol=unset#application/octet-stream
+test/0053.dis.txt -text
+test/0053.txt -text svneol=unset#application/octet-stream
+test/0054.dis.txt -text
+test/0054.txt -text svneol=unset#application/octet-stream
 test/history.log -text
 test/run-tests.sh -text

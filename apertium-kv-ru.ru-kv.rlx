@@ -116,6 +116,7 @@ SET NounFemNeu = (n f) OR (n nt) OR (n mfn) ;
 
 SET NOM-OR-GEN = Nom | Gen ; 
 SET NOM-OR-ACC = Nom | Acc ;
+SET ACC-OR-GEN = Acc | Gen ;
 
 SET ANIM-ACC-OR-GEN = Acc + Anim | Gen - Anim;
 
@@ -278,8 +279,12 @@ REMOVE CS IF (0 ("что")) (NOT -1 COMMA) (NOT -1 BOS) ;
 SELECT CS IF (0 ("что")) (-1 COMMA) ;
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий.
 
-REMOVE Gen IF (0C N) (0 Gen) (0 Acc) (NOT *-1C N + NOTGEN BARRIER NPNHA);
+REMOVE Gen IF (0C N) (0 Gen) (0 Acc) (NOT *-1C N + NOTGEN BARRIER NPNHA) (NOT *-1C Num BARRIER NPNHA);
     ## Если мы не будем так смотреть, то, хотя мы и разобьём врага, через 30 лет снова возникнет коммунистическая опасность.
+    ## Услугами детских садов пользуются 135 тысяч работающих матерей.
+
+REMOVE Acc IF (0C ACC-OR-GEN) (*-1C Num LINK 1C Gen BARRIER NOTGEN);
+    ## Услугами детских садов пользуются 135 тысяч работающих матерей.
 
 REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*1C V-FIN) (NOT *1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
 REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN) (NOT *-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
@@ -311,6 +316,9 @@ SELECT NP-HEAD + Nom + $$NUMBER IF (0 NOM-OR-ACC) (*1C V-FIN + $$NUMBER BARRIER 
 REMOVE NP-HEAD + Nom IF (*-1C Pron + Pers + Nom BARRIER S-BOUNDARY) ;
     ## Там он принялся изучать русский язык.
 
+REMOVE Interj IF (NOT 1* ("!") BARRIER S-BOUNDARY) ;
+    ## Если же верить, однако, сообщениям в газетах от 29 ноября, человеческих жертв удалось избежать. 
+    ## Однако этим он не окончил свою политическую деятельность. 
 
 # =========================================================================== #
 #   Lexicalised rules                                                         #

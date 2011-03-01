@@ -1,0 +1,25 @@
+"<Хотя>"
+	"хотеть" vbmod imperf pprs adv 
+"<это>"
+	"это" prn dem nt sg nom 
+"<и>"
+	"и" cnjcoo 
+"<не>"
+	"не" adv 
+"<является>"
+	"являться" vblex imperf pres p3 sg 
+"<раствором>"
+	"раствор" n m nn sg ins 
+"<в>"
+	"в" pr 
+"<химическом>"
+	"химический" adj m sg prp 
+"<смысле>"
+	"смысл" n m nn sg prp 
+"<этого>"
+	"этот" det dem nt sg gen 
+"<слова>"
+	"слово" n nt nn sg gen 
+"<.>"
+	"." sent 
+
