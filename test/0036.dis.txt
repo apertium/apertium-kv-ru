@@ -1,0 +1,19 @@
+"<Строительство>"
+	"строительство" n nt nn sg nom 
+"<этого>"
+	"этот" det dem nt sg gen 
+"<гигантского>"
+	"гигантский" adj nt sg gen 
+"<сооружения>"
+	"сооружение" n nt nn sg gen 
+"<длилось>"
+	"длиться" vblex imperf past nt sg 
+"<всего>"
+	"весь" det ind m sg gen 
+"<5>"
+	"5" num 
+"<лет>"
+	"год" n m nn pl gen 
+"<.>"
+	"." sent 
+

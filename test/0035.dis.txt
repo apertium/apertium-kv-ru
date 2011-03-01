@@ -1,0 +1,15 @@
+"<Там>"
+	"там" adv 
+"<он>"
+	"prpers" prn p3 m sg nom 
+"<принялся>"
+	"приняться" vblex perf past m sg 
+"<изучать>"
+	"изучать" vblex imperf inf 
+"<русский>"
+	"русский" adj m nn sg acc 
+"<язык>"
+	"язык" n m nn sg acc 
+"<.>"
+	"." sent 
+

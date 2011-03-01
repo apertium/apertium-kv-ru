@@ -1,0 +1,21 @@
+"<Взгляд>"
+	"взгляд" n m nn sg nom 
+"<может>"
+	"мочь" vbmod imperf pres p3 sg 
+"<выражать>"
+	"выражать" vblex imperf inf 
+"<и>"
+	"и" cnjcoo 
+"<вызывать>"
+	"вызывать" vblex imperf inf 
+"<эмоции>"
+	"эмоция" n f nn pl acc 
+"<и>"
+	"и" cnjcoo 
+"<психическое>"
+	"психический" adj nt sg acc 
+"<состояние>"
+	"состояние" n nt nn sg acc 
+"<.>"
+	"." sent 
+

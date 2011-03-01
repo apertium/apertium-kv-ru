@@ -131,6 +131,8 @@ SET NOTINS = Nom | Gen | Dat | Acc | Prp ;
 SET NOTPRP = Nom | Gen | Dat | Acc | Ins ;
 
 SET NOTACCINS = Nom | Gen | Dat | Prp ; 
+SET NOTNOMACC = Ins | Gen | Dat | Prp ; 
+SET NOTNOMGEN = Ins | Acc | Dat | Prp ; 
 
 SET OBL    = NGDAIP - Nom ;
 
@@ -224,31 +226,46 @@ REMOVE Pron IF (0 Dem + $$NUMBER + $$NGDAIP)
 SELECT ODIN + $$GENDER IF (*1C N + $$GENDER BARRIER NPNHA) ;
     ## За все время заключения он так и не увидел ни одного человеческого лица.
 
+SELECT $$NGDAIP IF (0 PrtPrc + $$NGDAIP) (-1 COMMA) (-2C N + $$NGDAIP);
+    ## Физическое понимание процессов, происходящих в природе, постоянно развивается.
+
+REMOVE NOTNOMGEN (0C N + OBL) (-1C Num) ;
+    ## В 177 году германские племена вновь начали наступление.
+
 # =========================================================================== #
 #   PP disambiguation                                                         #
 # =========================================================================== #
 
-SELECT Nom IF (*-1 ("в") BARRIER NOTNOM OR V OR Pr) (0C Pl) ;
+SELECT Nom IF (*-1 ("в") BARRIER NOTNOM OR V OR Pr) (0C Pl) (NOT -2 BOS) ;
     ## Маша недавно вышла в рабочие.
     ## Дима пошёл в политики.
+    ## В годы советской власти с 1919 года менялись границы области и районов.
 
 SELECT Nom IF (*-1 ("за") BARRIER NOTNOM OR V OR Pr) (*-1C ("что") + Interr) ;
     ## Что она за женщина?
     ## Что Володя за студент?
 
-SELECT Acc IF (*-1 ACCPREP BARRIER NOTACC OR V OR Pr) ;
+SELECT Acc IF (*-1 ACCPREP BARRIER NOTACC OR V OR Pr OR Num) ;
     ## С 1977 года по 1990 год — ведущий программы « Этот фантастический мир ».
     ## В 2004 вступила в Европейский союз.
+    ## В годы советской власти с 1919 года менялись границы области и районов.
 
 SELECT Gen IF (*-1 GENPREP BARRIER NOTGEN OR V OR Pr) ;
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
 
-SELECT Prp IF (*-1 PRPPREP BARRIER NOTPRP OR V OR Pr) ;
+SELECT Prp IF (*-1 PRPPREP BARRIER NOTPRP OR V OR Pr OR Num) ;
     ## Экономическая теория не стоит на месте и её развитием в исторической перспективе занимается история экономических учений.
 
 # =========================================================================== #
 #   Global disambiguation                                                     #
 # =========================================================================== #
+
+
+REMOVE Nom IF (0C N + NOM-OR-ACC) (*-1C PRE-N + NOM-OR-ACC BARRIER NOTNOMACC) (*-1C CC LINK -1C N + NOTNOM) (NOT 1* V-FIN BARRIER S-BOUNDARY) ;
+    ## Взгляд может выражать и вызывать эмоции и психическое состояние.
+
+SELECT $$NGDAIP (0 $$NGDAIP) (1 CC LINK (1C PRE-N  + $$NGDAIP) OR (1C N + $$NGDAIP));
+    ## Взгляд может выражать и вызывать эмоции и психическое состояние.
 
 REMOVE Prp IF (NOT *-1 PRPPREP BARRIER V OR NOTPRP OR S-BOUNDARY) ;
     ## Физическое понимание процессов, происходящих в природе, постоянно развивается.
