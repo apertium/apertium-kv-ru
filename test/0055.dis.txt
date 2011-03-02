@@ -1,0 +1,15 @@
+"<Входит>"
+	"входить" vblex imperf pres p3 sg 
+"<в>"
+	"в" pr 
+"<число>"
+	"число" n nt nn sg acc 
+"<исторических>"
+	"исторический" adj mfn pl gen 
+"<городов>"
+	"город" n m nn pl gen 
+"<России>"
+	"Россия" np top f sg gen 
+"<.>"
+	"." sent 
+

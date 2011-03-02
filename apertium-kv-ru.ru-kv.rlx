@@ -141,7 +141,7 @@ SET OBL    = NGDAIP - Nom ;
 
 SET WORD = N | V | A | Pr | Pron | Det | Adv | CC | CS | Interj | Num | ("\?") ;
 
-SET PRE-N =  A | Det | Num | (prn gen) | CC ; # Det???
+SET PRE-N =  A | Det | Num | (n gen) | (prn gen) | CC ; # Det???
 
 LIST COMMA = (",") (cm) ;
 
@@ -251,8 +251,9 @@ SELECT Acc IF (*-1 ACCPREP BARRIER NOTACC OR V OR Pr OR Num) ;
     ## В 2004 вступила в Европейский союз.
     ## В годы советской власти с 1919 года менялись границы области и районов.
 
-SELECT Gen IF (*-1 GENPREP BARRIER NOTGEN OR V OR Pr) ;
+SELECT Gen IF (*-1 GENPREP BARRIER NOTGEN OR V OR Pr) (NOT 0 V-FIN);
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий .
+    ## С 1931 года начал писать для научно — фантастических журналов, но оставил эту деятельность в 1933 году.
 
 SELECT Prp IF (*-1 PRPPREP BARRIER NOTPRP OR V OR Pr OR Num) ;
     ## Экономическая теория не стоит на месте и её развитием в исторической перспективе занимается история экономических учений.
@@ -279,15 +280,15 @@ REMOVE CS IF (0 ("что")) (NOT -1 COMMA) (NOT -1 BOS) ;
 SELECT CS IF (0 ("что")) (-1 COMMA) ;
     ## Практика показывает, что для её решения уже недостаточно существующих физических теорий.
 
-REMOVE Gen IF (0C N) (0 Gen) (0 Acc) (NOT *-1C N + NOTGEN BARRIER NPNHA) (NOT *-1C Num BARRIER NPNHA);
+REMOVE Gen IF (0C N) (0 ACC-OR-GEN) (NOT *-1C N + NOTGEN BARRIER NPNHA) (NOT *-1C Num BARRIER NPNHA);
     ## Если мы не будем так смотреть, то, хотя мы и разобьём врага, через 30 лет снова возникнет коммунистическая опасность.
     ## Услугами детских садов пользуются 135 тысяч работающих матерей.
 
 REMOVE Acc IF (0C ACC-OR-GEN) (*-1C Num LINK 1C Gen BARRIER NOTGEN);
     ## Услугами детских садов пользуются 135 тысяч работающих матерей.
 
-REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*1C V-FIN) (NOT *1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
-REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN) (NOT *-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
+REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*1C V-FIN BARRIER S-BOUNDARY) (NOT *1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
+REMOVE Nom + $$NUMBER (0 NOM-OR-ACC) (*-1C V-FIN BARRIER S-BOUNDARY) (NOT *-1C V-FIN + $$NUMBER BARRIER S-BOUNDARY) ;
     ## Вот что говорят об этом исторические архивы.
     ## В 177 году германские племена вновь начали наступление.
 
