@@ -761,9 +761,6 @@
       <e>       <p><l>их</l><r><s n="det"/><s n="ref"/><s n="mfn"/><s n="pl"/><s n="prp"/></r></p></e>
     </pardef>
 
-
-
-
     <pardef n="т/от__det"> 
       <e>       <p><l>от</l><r>от<s n="det"/><s n="dem"/><s n="m"/><s n="sg"/><s n="nom"/></r></p></e>
       <e>       <p><l>ого</l><r>от<s n="det"/><s n="dem"/><s n="m"/><s n="sg"/><s n="gen"/></r></p></e>
@@ -3007,13 +3004,12 @@
       <e><p>          <l></l><r><s n="n"/><s n="m"/><s n="nn"/><s n="sg"/><s n="nom"/></r></p></e>
       <e><p>          <l></l><r><s n="n"/><s n="m"/><s n="nn"/><s n="sg"/><s n="acc"/></r></p></e>
       <e><p>          <l>а</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="sg"/><s n="gen"/></r></p></e>
-      <e><p>          <l>ові</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="sg"/><s n="dat"/></r></p></e>
       <e><p>          <l>у</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="sg"/><s n="dat"/></r></p></e>
       <e><p>          <l>ом</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="sg"/><s n="ins"/></r></p></e>
       <e><p>          <l>е</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="sg"/><s n="prp"/></r></p></e>
-      <e><p>          <l>и</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="pl"/><s n="nom"/></r></p></e>
-      <e><p>          <l>и</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="pl"/><s n="acc"/></r></p></e>
-      <e><p>          <l>і́в</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="pl"/><s n="gen"/></r></p></e>
+      <e><p>          <l>ы</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e><p>          <l>ы</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="pl"/><s n="acc"/></r></p></e>
+      <e><p>          <l>ов</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="pl"/><s n="gen"/></r></p></e>
       <e><p>          <l>ам</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="pl"/><s n="dat"/></r></p></e>
       <e><p>          <l>ами</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="pl"/><s n="ins"/></r></p></e>
       <e><p>          <l>ах</l><r><s n="n"/><s n="m"/><s n="nn"/><s n="pl"/><s n="prp"/></r></p></e>
@@ -12388,6 +12384,7 @@
     <e lm="градус"><i>градус</i><par n="ус__n_m_nn"/></e>
     <e lm="гражданин"><i>граждан</i><par n="граждан/ин__n_m_an"/></e>
     <e lm="грамм"><i>грамм</i><par n="рельс__n_m_an"/></e>
+    <e lm="граммафон"><i>граммафон</i><par n="ус__n_m_nn"/></e>
     <e lm="граната"><i>гранат</i><par n="рад/а__n_f_nn"/></e>
     <e lm="граница"><i>границ</i><par n="виц/а__n_f_nn"/></e>
     <e lm="грань"><i>гран</i><par n="ос/ь__n_f_nn"/></e>
@@ -14305,6 +14302,7 @@
 
     <e lm="до сих пор"><i>до<b/>сих<b/>пор</i><par n="здесь__adv"/></e>
     <e lm="таким образом"><i>таким<b/>образом</i><par n="здесь__adv"/></e>
+    <e lm="в начале"><i>в<b/>начале</i><par n="здесь__adv"/></e>
     <e lm="ещё"><i>ещё</i><par n="здесь__adv"/></e>
     <e lm="абсолютно"><i>абсолютно</i><par n="здесь__adv"/></e>
     <e lm="аккуратно"><i>аккуратно</i><par n="здесь__adv"/></e>
