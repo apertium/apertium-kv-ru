@@ -1,5 +1,6 @@
 * text=auto !eol
 /Makefile -text
+/TODO -text
 /apertium-kv-ru.ru-kv.rlx -text
 /apertium-kv-ru.ru.acx -text
 /apertium-kv-ru.ru.dix -text
