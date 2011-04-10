@@ -2,10 +2,34 @@
   <alphabet/>
   <sdefs>
     <sdef n="n"          c="Noun"/>
+    <sdef n="prn"        c="Pronoun"/>
+    <sdef n="cnjcoo"     c="Coordinating conjunction"/>
+    <sdef n="cnjsub"     c="Subordinating conjunction"/>
+
+    <sdef n="p1"         c="First person"/>
+    <sdef n="p2"         c="Second person"/>
+    <sdef n="p3"         c="Third person"/>
+
     <sdef n="m"          c="Masculine"/>
+    <sdef n="f"          c="Feminine"/>
+    <sdef n="mf"         c="Masculine / feminine"/>
+
     <sdef n="nn"         c="Inanimate"/>
   </sdefs>
   <section id="main" type="standard">
+    <!-- SECTION: Conjunctions -->
+
+    <e c="  0"><p><l>а<s n="cnjcoo"/></l><r>и<s n="cnjcoo"/></r></p></e>
+
+    <e c="  0"><p><l>кӧ<s n="cnjsub"/></l><r>если<s n="cnjsub"/></r></p></e>
+
+    <!-- SECTION: Pronouns -->
+
+    <e c="  0"><p><l>ме<s n="prn"/><s n="pers"/><s n="p1"/></l><r>я<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/></r></p></e>
+    <e c="  0"><p><l>тэ<s n="prn"/><s n="pers"/><s n="p2"/></l><r>ты<s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/></r></p></e>
+    <e c="  0"><p><l>ми<s n="prn"/><s n="pers"/><s n="p1"/></l><r>мы<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/></r></p></e>
+    <e c="  0"><p><l>ті<s n="prn"/><s n="pers"/><s n="p2"/></l><r>вы<s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/></r></p></e>
+
     <!-- SECTION: Nouns -->
 
     <e c="  0"><p><l>аэропорт<s n="n"/></l><r>аэропорт<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
