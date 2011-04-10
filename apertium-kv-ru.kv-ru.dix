@@ -1,0 +1,14 @@
+<dictionary>
+  <alphabet/>
+  <sdefs>
+    <sdef n="n"          c="Noun"/>
+    <sdef n="m"          c="Masculine"/>
+    <sdef n="nn"         c="Inanimate"/>
+  </sdefs>
+  <section id="main" type="standard">
+    <!-- SECTION: Nouns -->
+
+    <e c="  0"><p><l>аэропорт<s n="n"/></l><r>аэропорт<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+
+  </section>
+</dictionary>
