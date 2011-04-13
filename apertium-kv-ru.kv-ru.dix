@@ -3,6 +3,7 @@
   <sdefs>
     <sdef n="n"          c="Noun"/>
     <sdef n="prn"        c="Pronoun"/>
+    <sdef n="adj"        c="Adjective"/>
     <sdef n="cnjcoo"     c="Coordinating conjunction"/>
     <sdef n="cnjsub"     c="Subordinating conjunction"/>
 
@@ -33,6 +34,14 @@
     <!-- SECTION: Nouns -->
 
     <e c="  0"><p><l>аэропорт<s n="n"/></l><r>аэропорт<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>кыв<s n="n"/></l><r>язык<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>кад<s n="n"/></l><r>время<s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
+
+    <!-- SECTION: Adjectives -->
+
+    <e c="  0"><p><l>выль<s n="adj"/></l><r>новый<s n="adj"/></r></p></e>
+
+    <!-- SECTION: Verbs -->
 
   </section>
 </dictionary>
