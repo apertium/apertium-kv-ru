@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="kv-ru" install="yes">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="kv-ru.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="kv-ru.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kv-ru.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-kv-ru.kv-ru.t1x"/>
+        <file name="kv-ru.t1x.bin"/>
+        <file name="kv-ru.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kv-ru.kv-ru.t2x"/>
+        <file name="kv-ru.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kv-ru.kv-ru.t3x"/>
+        <file name="kv-ru.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="kv-ru.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="kv-ru-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="kv-ru.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  <mode name="kv-ru-constraints" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="kv-ru.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="kv-ru.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kv-ru-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="kv-ru.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="kv-ru.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kv-ru.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="kv-ru-chunker" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="kv-ru.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="kv-ru.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kv-ru.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-kv-ru.kv-ru.t1x"/>
+        <file name="kv-ru.t1x.bin"/>
+        <file name="kv-ru.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kv-ru-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="kv-ru.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="kv-ru.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kv-ru.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-kv-ru.kv-ru.t1x"/>
+        <file name="kv-ru.t1x.bin"/>
+        <file name="kv-ru.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kv-ru.kv-ru.t2x"/>
+        <file name="kv-ru.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  <mode name="kv-ru-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="kv-ru.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="kv-ru.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kv-ru.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-kv-ru.kv-ru.t1x"/>
+        <file name="kv-ru.t1x.bin"/>
+        <file name="kv-ru.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kv-ru.kv-ru.t2x"/>
+        <file name="kv-ru.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kv-ru.kv-ru.t3x"/>
+        <file name="kv-ru.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>

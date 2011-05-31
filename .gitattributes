@@ -2,10 +2,14 @@
 /Makefile -text
 /TODO -text
 /apertium-kv-ru.kv-ru.dix -text
+/apertium-kv-ru.kv-ru.t1x -text
+/apertium-kv-ru.kv-ru.t2x -text
+/apertium-kv-ru.kv-ru.t3x -text
 /apertium-kv-ru.ru-kv.rlx -text
 /apertium-kv-ru.ru.acx -text
 /apertium-kv-ru.ru.dix -text
 dev/sentences.txt -text svneol=unset#application/octet-stream
+/modes.xml -text
 test/0001.dis.txt -text
 test/0001.txt -text svneol=unset#application/octet-stream
 test/0002.dis.txt -text

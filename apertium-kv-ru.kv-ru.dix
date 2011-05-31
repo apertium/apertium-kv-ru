@@ -3,6 +3,7 @@
   <sdefs>
     <sdef n="n"          c="Noun"/>
     <sdef n="prn"        c="Pronoun"/>
+    <sdef n="pcle"       c="Particle"/>
     <sdef n="adj"        c="Adjective"/>
     <sdef n="cnjcoo"     c="Coordinating conjunction"/>
     <sdef n="cnjsub"     c="Subordinating conjunction"/>
@@ -13,23 +14,39 @@
 
     <sdef n="m"          c="Masculine"/>
     <sdef n="f"          c="Feminine"/>
+    <sdef n="nt"         c="Neuter"/>
     <sdef n="mf"         c="Masculine / feminine"/>
 
     <sdef n="nn"         c="Inanimate"/>
+
+    <sdef n="pers"       c="Personal"/>
+
+    <sdef n="der▸mwn"    c="Modifier without noun"/>
+
+    <sdef n="sent"       c="Sentence marker"/>
+    <sdef n="clb"        c="Clause-level boundary"/>
+    <sdef n="cm"         c="Comma"/>
   </sdefs>
+  <pardefs>
+    <pardef n="adj_der▸mwn_nt_nn">
+      <e><p><l><s n="adj"/><s n="der▸mwn"/><s n="n"/></l><r><s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
+    </pardef>
+  </pardefs>
   <section id="main" type="standard">
     <!-- SECTION: Conjunctions -->
 
+    <e c="  0"><p><l>и<s n="cnjcoo"/></l><r>и<s n="cnjcoo"/></r></p></e>
     <e c="  0"><p><l>а<s n="cnjcoo"/></l><r>и<s n="cnjcoo"/></r></p></e>
+    <e c="  0"><p><l>но<s n="pcle"/></l><r>но<s n="cnjcoo"/></r></p></e>
 
     <e c="  0"><p><l>кӧ<s n="cnjsub"/></l><r>если<s n="cnjsub"/></r></p></e>
 
     <!-- SECTION: Pronouns -->
 
-    <e c="  0"><p><l>ме<s n="prn"/><s n="pers"/><s n="p1"/></l><r>я<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/></r></p></e>
-    <e c="  0"><p><l>тэ<s n="prn"/><s n="pers"/><s n="p2"/></l><r>ты<s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/></r></p></e>
-    <e c="  0"><p><l>ми<s n="prn"/><s n="pers"/><s n="p1"/></l><r>мы<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/></r></p></e>
-    <e c="  0"><p><l>ті<s n="prn"/><s n="pers"/><s n="p2"/></l><r>вы<s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/></r></p></e>
+    <e c="  0"><p><l>ме<s n="prn"/><s n="pers"/><s n="p1"/></l><r>prpers<s n="prn"/><s n="p1"/><s n="mf"/></r></p></e>
+    <e c="  0"><p><l>тэ<s n="prn"/><s n="pers"/><s n="p2"/></l><r>prpers<s n="prn"/><s n="p2"/><s n="mf"/></r></p></e>
+    <e c="  0"><p><l>ми<s n="prn"/><s n="pers"/><s n="p1"/></l><r>prpers<s n="prn"/><s n="p1"/><s n="mf"/></r></p></e>
+    <e c="  0"><p><l>ті<s n="prn"/><s n="pers"/><s n="p2"/></l><r>prpers<s n="prn"/><s n="p2"/><s n="mf"/></r></p></e>
 
     <!-- SECTION: Nouns -->
 
@@ -37,11 +54,18 @@
     <e c="  0"><p><l>кыв<s n="n"/></l><r>язык<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
     <e c="  0"><p><l>кад<s n="n"/></l><r>время<s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
 
+    <e c="  0"><p><l>лёк</l><r>зло</r></p><par n="adj_der▸mwn_nt_nn"/></e>
+
     <!-- SECTION: Adjectives -->
 
     <e c="  0"><p><l>выль<s n="adj"/></l><r>новый<s n="adj"/></r></p></e>
 
     <!-- SECTION: Verbs -->
+
+    <!-- SECTION: Punctuation -->
+
+    <e><re>[.!\?]+</re><p><l><s n="clb"/></l><r><s n="sent"/></r></p></e>
+    <e><i>,</i><p><l><s n="clb"/></l><r><s n="cm"/></r></p></e>
 
   </section>
 </dictionary>
