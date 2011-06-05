@@ -10,6 +10,7 @@
 /apertium-kv-ru.ru.dix -text
 dev/sentences.txt -text svneol=unset#application/octet-stream
 /modes.xml -text
+/pending-tests.sh -text
 test/0001.dis.txt -text
 test/0001.txt -text svneol=unset#application/octet-stream
 test/0002.dis.txt -text

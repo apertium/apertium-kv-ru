@@ -5,6 +5,9 @@
     <sdef n="prn"        c="Pronoun"/>
     <sdef n="pcle"       c="Particle"/>
     <sdef n="adj"        c="Adjective"/>
+    <sdef n="adv"        c="Adverb"/>
+    <sdef n="v"          c="Verb"/>
+    <sdef n="vblex"      c="Lexical verb"/>
     <sdef n="cnjcoo"     c="Coordinating conjunction"/>
     <sdef n="cnjsub"     c="Subordinating conjunction"/>
 
@@ -18,6 +21,7 @@
     <sdef n="mf"         c="Masculine / feminine"/>
 
     <sdef n="nn"         c="Inanimate"/>
+    <sdef n="aa"         c="Animate"/>
 
     <sdef n="pers"       c="Personal"/>
 
@@ -53,6 +57,10 @@
     <e c="  0"><p><l>аэропорт<s n="n"/></l><r>аэропорт<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
     <e c="  0"><p><l>кыв<s n="n"/></l><r>язык<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
     <e c="  0"><p><l>кад<s n="n"/></l><r>время<s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>библиотека<s n="n"/></l><r>библиотека<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>стадион<s n="n"/></l><r>стадион<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>инженер<s n="n"/></l><r>инженер<s n="n"/><s n="m"/><s n="aa"/></r></p></e>
+    <e c="  0"><p><l>студент<s n="n"/></l><r>студент<s n="n"/><s n="m"/><s n="aa"/></r></p></e>
 
     <e c="  0"><p><l>лёк</l><r>зло</r></p><par n="adj_der▸mwn_nt_nn"/></e>
 
@@ -60,7 +68,14 @@
 
     <e c="  0"><p><l>выль<s n="adj"/></l><r>новый<s n="adj"/></r></p></e>
 
+    <!-- SECTION: Adverbs -->
+
+    <e c="  0"><p><l>тані<s n="adv"/></l><r>здесь<s n="adv"/></r></p></e>
+    <e c="  0"><p><l>сэні<s n="adv"/></l><r>там<s n="adv"/></r></p></e>
+
     <!-- SECTION: Verbs -->
+
+    <e c="  0"><p><l>овны<s n="v"/></l><r>жить<s n="vblex"/></r></p></e>
 
     <!-- SECTION: Punctuation -->
 
