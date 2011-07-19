@@ -1,0 +1,13 @@
+
+==Dependencies==
+
+You'll need two symlinks:
+
+kv-ru.automorf.hfst:
+
+- should be linked to Giellatekno kt/kom/src/kom-mor-lower.hfst.ol
+- you'll need to compile in the kom/src directory before you do this
+
+apertium-kv-ru.kv-ru.rlx:
+
+- should be linked to Giellatekno kt/kom/src/kom-dis.rle
