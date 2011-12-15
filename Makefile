@@ -1,6 +1,7 @@
 all:
 	lt-comp lr apertium-kv-ru.ru.dix ru-kv.automorf.bin apertium-kv-ru.ru.acx
 	lt-comp lr apertium-kv-ru.kv-ru.dix kv-ru.autobil.bin
+	lt-comp rl apertium-kv-ru.kv-ru.dix ru-kv.autobil.bin
 	cg-comp apertium-kv-ru.ru-kv.rlx ru-kv.rlx.bin
 	cg-comp apertium-kv-ru.kv-ru.rlx kv-ru.rlx.bin
 
