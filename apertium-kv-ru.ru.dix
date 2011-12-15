@@ -15529,12 +15529,7 @@
     <e lm="подсказать"><i>подска</i><par n="ука/зать__vblex_perf"/></e>
     <e lm="подтвердить"><i>подтвер</i><par n="ро/дить__vblex_perf"/></e>
     <e lm="подумать"><i>подума</i><par n="суме/ть__vblex_perf"/></e>
-    <e lm="подхват<pardef n="/в__pr">
-      <e r="LR"><p><l>в</l><r>в<s n="pr"/></r></p></e>
-      <e r="LR"><p><l>во</l><r>в<s n="pr"/></r></p></e>
-      <e r="RL"><p><l><a/>во</l><r>в<s n="pr"/></r></p></e>
-      <e>       <p><l>в<b/></l><r><s n="pr"/><j/></r></p><par n="S__pprep"/></e>
-    </pardef>ить"><i>подхва</i><par n="схва/тить__vblex_perf"/></e>
+    <e lm="подхватить"><i>подхва</i><par n="схва/тить__vblex_perf"/></e>
     <e lm="подходить"><i>подхо</i><par n="хо/дить__vblex_imperf"/></e>
     <e lm="подчеркивать"><i>подч</i><par n="подч/еркивать__vblex_imperf"/></e>
     <e lm="подчеркнуть"><i>подчеркн</i><par n="усн/уть__vblex_perf"/></e>
