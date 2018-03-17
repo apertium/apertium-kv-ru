@@ -129,3 +129,8 @@ test/0057.dis.txt -text
 test/0057.txt -text svneol=unset#application/octet-stream
 test/history.log -text
 test/run-tests.sh -text
+*.dix linguist-language=XML linguist-detectable=true
+*.lrx linguist-language=XML linguist-detectable=true
+*.lsx linguist-language=XML linguist-detectable=true
+*.tsx linguist-language=XML linguist-detectable=true
+*.t[[:digit:]]x linguist-language=XML linguist-detectable=true
